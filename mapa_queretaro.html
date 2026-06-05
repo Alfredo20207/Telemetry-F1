@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_23c47c35f634cb737c8e5b4a8604b95b {
+                #map_4c38e841c40e7ce82a97332876003f02 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,14 +54,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_23c47c35f634cb737c8e5b4a8604b95b" ></div>
+            <div class="folium-map" id="map_4c38e841c40e7ce82a97332876003f02" ></div>
         
 </body>
 <script>
     
     
-            var map_23c47c35f634cb737c8e5b4a8604b95b = L.map(
-                "map_23c47c35f634cb737c8e5b4a8604b95b",
+            var map_4c38e841c40e7ce82a97332876003f02 = L.map(
+                "map_4c38e841c40e7ce82a97332876003f02",
                 {
                     center: [20.477694736471342, -100.12033044415305],
                     crs: L.CRS.EPSG3857,
@@ -78,14 +78,14 @@
 
         
     
-            var tile_layer_67fdb848caeb36dc7c1b4db5d51fa70a = L.tileLayer(
-                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+            var tile_layer_78c2b05b92f8e5651c6899efebe266f0 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
-  "maxZoom": 18,
-  "maxNativeZoom": 18,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
   "noWrap": false,
-  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
   "subdomains": "abc",
   "detectRetina": false,
   "tms": false,
@@ -95,28 +95,27 @@
             );
         
     
-            tile_layer_67fdb848caeb36dc7c1b4db5d51fa70a.addTo(map_23c47c35f634cb737c8e5b4a8604b95b);
+            tile_layer_78c2b05b92f8e5651c6899efebe266f0.addTo(map_4c38e841c40e7ce82a97332876003f02);
         
     
-            var marker_8dde813677c7d7013dde635563e95d34 = L.marker(
-                [20.477694736471342, -100.12033044415305],
-                {
-}
-            ).addTo(map_23c47c35f634cb737c8e5b4a8604b95b);
+            var polygon_d8ccf8b557b0cfca5bb5f831e7bd7dbd = L.polygon(
+                [[20.49, -100.14], [20.49, -100.1], [20.46, -100.1], [20.46, -100.14]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_4c38e841c40e7ce82a97332876003f02);
         
     
-        var popup_c8ea6e944524d597454f7a0097e6c2b7 = L.popup({
+        var popup_8160f4dbe95d5e77f2c646e8c68a0a46 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_ad6a48b95362e1282b885a667c4da42d = $(`<div id="html_ad6a48b95362e1282b885a667c4da42d" style="width: 100.0%; height: 100.0%;">Home</div>`)[0];
-                popup_c8ea6e944524d597454f7a0097e6c2b7.setContent(html_ad6a48b95362e1282b885a667c4da42d);
+                var html_3f27d6bf6b43f9adac4dfd7e602108bc = $(`<div id="html_3f27d6bf6b43f9adac4dfd7e602108bc" style="width: 100.0%; height: 100.0%;">Región Resaltada</div>`)[0];
+                popup_8160f4dbe95d5e77f2c646e8c68a0a46.setContent(html_3f27d6bf6b43f9adac4dfd7e602108bc);
             
         
 
-        marker_8dde813677c7d7013dde635563e95d34.bindPopup(popup_c8ea6e944524d597454f7a0097e6c2b7)
+        polygon_d8ccf8b557b0cfca5bb5f831e7bd7dbd.bindPopup(popup_8160f4dbe95d5e77f2c646e8c68a0a46)
         ;
 
         
