@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_c7f13421730c1970407c46ab10ca89c2 {
+                #map_23c47c35f634cb737c8e5b4a8604b95b {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,16 +54,16 @@
 <body>
     
     
-            <div class="folium-map" id="map_c7f13421730c1970407c46ab10ca89c2" ></div>
+            <div class="folium-map" id="map_23c47c35f634cb737c8e5b4a8604b95b" ></div>
         
 </body>
 <script>
     
     
-            var map_c7f13421730c1970407c46ab10ca89c2 = L.map(
-                "map_c7f13421730c1970407c46ab10ca89c2",
+            var map_23c47c35f634cb737c8e5b4a8604b95b = L.map(
+                "map_23c47c35f634cb737c8e5b4a8604b95b",
                 {
-                    center: [20.588, -100.388],
+                    center: [20.477694736471342, -100.12033044415305],
                     crs: L.CRS.EPSG3857,
                     ...{
   "zoom": 13,
@@ -78,14 +78,14 @@
 
         
     
-            var tile_layer_45abeb7931aae4cc73eda723968b4f31 = L.tileLayer(
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+            var tile_layer_67fdb848caeb36dc7c1b4db5d51fa70a = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
                 {
   "minZoom": 0,
-  "maxZoom": 19,
-  "maxNativeZoom": 19,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
   "noWrap": false,
-  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
   "subdomains": "abc",
   "detectRetina": false,
   "tms": false,
@@ -95,28 +95,28 @@
             );
         
     
-            tile_layer_45abeb7931aae4cc73eda723968b4f31.addTo(map_c7f13421730c1970407c46ab10ca89c2);
+            tile_layer_67fdb848caeb36dc7c1b4db5d51fa70a.addTo(map_23c47c35f634cb737c8e5b4a8604b95b);
         
     
-            var marker_888810107688f4741c3b2c3b26e208cf = L.marker(
-                [20.588, -100.388],
+            var marker_8dde813677c7d7013dde635563e95d34 = L.marker(
+                [20.477694736471342, -100.12033044415305],
                 {
 }
-            ).addTo(map_c7f13421730c1970407c46ab10ca89c2);
+            ).addTo(map_23c47c35f634cb737c8e5b4a8604b95b);
         
     
-        var popup_de2ee35bb5436c78b78398581c11422d = L.popup({
+        var popup_c8ea6e944524d597454f7a0097e6c2b7 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_2effa2bff2f65024e1a0eb7a39f3bb9f = $(`<div id="html_2effa2bff2f65024e1a0eb7a39f3bb9f" style="width: 100.0%; height: 100.0%;">Centro de Querétaro</div>`)[0];
-                popup_de2ee35bb5436c78b78398581c11422d.setContent(html_2effa2bff2f65024e1a0eb7a39f3bb9f);
+                var html_ad6a48b95362e1282b885a667c4da42d = $(`<div id="html_ad6a48b95362e1282b885a667c4da42d" style="width: 100.0%; height: 100.0%;">Home</div>`)[0];
+                popup_c8ea6e944524d597454f7a0097e6c2b7.setContent(html_ad6a48b95362e1282b885a667c4da42d);
             
         
 
-        marker_888810107688f4741c3b2c3b26e208cf.bindPopup(popup_de2ee35bb5436c78b78398581c11422d)
+        marker_8dde813677c7d7013dde635563e95d34.bindPopup(popup_c8ea6e944524d597454f7a0097e6c2b7)
         ;
 
         
