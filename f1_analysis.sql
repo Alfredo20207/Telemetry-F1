@@ -1,13 +1,13 @@
 -- creacion de BD
 -- drop database f1_analysis;
- -- create database if not exists f1_analysis;
+  create database if not exists f1_analysis;
 use f1_analysis;
 -- show tables;
 -- tabla escuderias
- -- drop table constructors;
+ --  drop table constructors;
 create table constructors(
-	constructorId int not null ,
-    constructorRef varchar(100) not null,
+	constructorId varchar(100) not null ,
+    -- constructorRef varchar(100) not null,
     name varchar(50) not null,
     nationality varchar(50) not null,
     primary key(constructorId)
@@ -58,7 +58,7 @@ CREATE TABLE results (
     resultId INT NOT NULL,
     raceId INT NOT NULL,
     driverId INT NOT NULL,
-    constructorId INT NOT NULL,
+    constructorId varchar(100) NOT NULL,
     number INT, -- Número del coche
     grid INT NOT NULL, -- Posición de salida en la parrilla
     position VARCHAR(10), -- Posición final en texto (puede ser 'R' de Retirado o 'D' de Descalificado)
