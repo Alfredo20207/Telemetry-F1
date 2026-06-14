@@ -15,30 +15,29 @@ create table constructors(
 
 -- tabla pilotos
 
-create table if not exists drivers(
-	driverId int not null auto_increment,
-    driverRef varchar(100) not null,
-    number int ,
-    code varchar(3),
-    forename varchar(100) not null, 
-    surname varchar(100) not null,
-    dob date, -- fecha de nacimiento
-    nationality varchar(50),
-    primary key (driverId)    
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4; 
+CREATE TABLE drivers (
+    driverId VARCHAR(100) NOT NULL, 
+    number INT,                    
+    code VARCHAR(3),                
+    forename VARCHAR(100) NOT NULL, 
+    surname VARCHAR(100) NOT NULL,  
+    dob DATE,                       
+    nationality VARCHAR(50),        
+    PRIMARY KEY (driverId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- tabla carreras
 
-create table if not exists races(
-	 raceId int not null,
-     year int not null,
-     round int not null,
-     circuitId int not null,
-     name varchar(100)  not null,
-     date DATE not null,
-     time TIME,
-     primary key(raceId)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE races (
+    season INT NOT NULL,
+    round INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    date DATE,
+    time VARCHAR(20), -- Lo dejamos como texto porque trae una 'Z' al final (ej. 15:00:00Z)
+    circuit_id VARCHAR(100) NOT NULL,
+    PRIMARY KEY (season, round) -- Esta combinación es nuestra nueva llave única
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+SET FOREIGN_KEY_CHECKS = 1;
 
 create table pit_stops(
 	raceId int not null,
@@ -55,27 +54,24 @@ create table pit_stops(
 
 -- 5. Tabla de Resultados de Carrera (Results)
 CREATE TABLE results (
-    resultId INT NOT NULL,
-    raceId INT NOT NULL,
-    driverId INT NOT NULL,
-    constructorId varchar(100) NOT NULL,
-    number INT, -- Número del coche
-    grid INT NOT NULL, -- Posición de salida en la parrilla
-    position VARCHAR(10), -- Posición final en texto (puede ser 'R' de Retirado o 'D' de Descalificado)
+    resultId INT AUTO_INCREMENT, -- Genera un número único automático para cada fila
+    season INT NOT NULL,
+    round INT NOT NULL,
+    driverId VARCHAR(100) NOT NULL,
+    constructorId VARCHAR(100) NOT NULL,
+    grid INT,
+    position VARCHAR(10),
     positionText VARCHAR(10),
-    positionOrder INT NOT NULL, -- Posición final estricta en número (ideal para cálculos continuos)
-    points DECIMAL(5,2) NOT NULL, -- Puntos obtenidos (usamos decimal por los medios puntos históricos o Sprints)
-    laps INT NOT NULL, -- Vueltas completadas por el piloto
-    time VARCHAR(50), -- Tiempo total de carrera (ej. "1:32:15.234")
-    milliseconds INT, -- Tiempo total expresado en milisegundos
-    fastestLap INT, -- El número de vuelta donde hizo su vuelta más 
-    rank INT, -- El ranking de su vuelta rápida comparado con los demás pilotos
-    fastestLapTime VARCHAR(50), -- Tiempo de la vuelta rápida en texto (ej. "1:21.432")
-    fastestLapSpeed VARCHAR(50), -- Velocidad promedio de la vuelta rápida
-    statusId INT NOT NULL, -- Identificador del estado final (1 = Terminado, 3 = Choque, etc.)
+    points DECIMAL(5,2),
+    laps INT,
+    status VARCHAR(100),
+    time VARCHAR(50),
+    fastestLapTime VARCHAR(50),
+    fastestLapRank INT,
+    fastestLapSpeed VARCHAR(50),
     PRIMARY KEY (resultId),
-    -- Definimos las llaves foráneas para mantener la integridad de nuestra base de datos
-    FOREIGN KEY (raceId) REFERENCES races(raceId),
+    -- Relaciones con tus otras tablas:
+    FOREIGN KEY (season, round) REFERENCES races(season, round),
     FOREIGN KEY (driverId) REFERENCES drivers(driverId),
     FOREIGN KEY (constructorId) REFERENCES constructors(constructorId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
