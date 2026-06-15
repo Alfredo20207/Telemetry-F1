@@ -75,3 +75,18 @@ CREATE TABLE results (
     FOREIGN KEY (driverId) REFERENCES drivers(driverId),
     FOREIGN KEY (constructorId) REFERENCES constructors(constructorId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+ -- drop table pit_stops;
+CREATE TABLE IF NOT EXISTS pit_stops (
+    season INT,
+    round INT,
+    race_name VARCHAR(100),
+    driverId VARCHAR(50),
+    stop INT,
+    lap INT,
+    time TIME,
+    duration_s DECIMAL(6,3), -- Para guardar duraciones como 36.604 o 24.418 de forma exacta
+    is_red_flag_hold VARCHAR(10), -- Para guardar 'True' o 'False'
+    PRIMARY KEY (season, round, driverId, stop),
+    FOREIGN KEY (season, round) REFERENCES races (season, round),
+    FOREIGN KEY (driverId) REFERENCES drivers (driverId)
+);
