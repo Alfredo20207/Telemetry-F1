@@ -3,7 +3,7 @@ SET GLOBAL FOREIGN_KEY_CHECKS = 0;
 -- limpiar la tabla por si dejo basura el intento anterior
 TRUNCATE TABLE results;
  -- use f1_analysis;
--- para convertir espacios blancos a null
+--  
 LOAD DATA LOCAL INFILE 'C:/Users/Gustavo/Documents/GitHub/CSV/race_results.csv' 
 INTO TABLE results
 CHARACTER SET utf8mb4 

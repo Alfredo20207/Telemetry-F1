@@ -90,3 +90,13 @@ CREATE TABLE IF NOT EXISTS pit_stops (
     FOREIGN KEY (season, round) REFERENCES races (season, round),
     FOREIGN KEY (driverId) REFERENCES drivers (driverId)
 );
+
+CREATE TABLE IF NOT EXISTS circuits (
+    circuit_id VARCHAR(50) PRIMARY KEY,
+    name VARCHAR(100),
+    city VARCHAR(100),
+    country VARCHAR(100),
+    lat DECIMAL(8,4),
+    lng DECIMAL(8,4),
+    url VARCHAR(255)
+);

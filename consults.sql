@@ -13,3 +13,17 @@ group by r.season, ra.name, d.surname, r.round;
 
 -- mostrar el total de pit stop, el promedio de duracion en cada temporada
 
+select
+r.season AS temporada,
+c.name as escuderia,
+count(p.stop) as total_paradas,
+avg(p.duration_s) as Duracion_promedio_seconds
+
+FROM pit_stops p
+JOIN results r on p.season = r.season and p.round = r.round and p.driverId = r.driverId
+JOIN constructors c on r.constructorId = c.constructorId
+GROUP BY r.season, c.name
+ORDER BY Duracion_promedio_seconds ASC;
+
+show tables;
+select * from races;
