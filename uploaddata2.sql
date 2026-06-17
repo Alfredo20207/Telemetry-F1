@@ -19,4 +19,6 @@ IGNORE 1 LINES
 
 SET FOREIGN_KEY_CHECKS = 1;
 
+
+
 select * from circuits;
