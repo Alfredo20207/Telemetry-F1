@@ -21,4 +21,4 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 
 
-select * from circuits;
+select * from results;
